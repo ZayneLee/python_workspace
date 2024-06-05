@@ -99,6 +99,7 @@ my_linked_list.print_list()
 
 print('After prepend - Linked List:')
 my_linked_list.prepend(0)
+my_linked_list.prepend(1)
 my_linked_list.print_list()
 
 print('After pop_first - Linked List:')
