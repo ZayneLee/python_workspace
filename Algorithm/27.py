@@ -86,6 +86,7 @@ my_linked_list.append(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
 my_linked_list.append(4)
+my_linked_list.append(5)
 
 print('Head:', my_linked_list.head.value)
 print('Tail:', my_linked_list.tail.value)
