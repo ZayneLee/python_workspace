@@ -3,6 +3,7 @@ class Node:
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self, value):
         new_node = Node(value)
@@ -45,7 +46,7 @@ class LinkedList:
         else:
             tmp = self.head
             pre = self.head
-            while(tmp.next):
+            while tmp.next:
                 pre = tmp
                 tmp = tmp.next
 
@@ -79,48 +80,30 @@ class LinkedList:
                 self.tail = None
         return tmp
 
-my_linked_list = LinkedList(1)
-my_linked_list.make_empty()
+    def get(self, index: int):
+        if index < 0 or index >= self.length:
+            return None
+        tmp = self.head
 
-my_linked_list.append(1)
-my_linked_list.append(2)
+        for _ in range(index):
+            tmp = tmp.next
+
+        return tmp
+
+    def set_value(self, index, value):
+        tmp = self.get(index)
+        if tmp:
+            tmp.value = value
+            return True
+        return False
+
+
+my_linked_list = LinkedList(1)
+
 my_linked_list.append(3)
 my_linked_list.append(4)
 my_linked_list.append(5)
 
-print('Head:', my_linked_list.head.value)
-print('Tail:', my_linked_list.tail.value)
-print('Length:', my_linked_list.length, '\n')
+my_linked_list.set_value(1, 2)
 
-print('Linked List:')
 my_linked_list.print_list()
-
-print('After pop - Linked List:')
-my_linked_list.pop()
-my_linked_list.print_list()
-
-print('After prepend - Linked List:')
-my_linked_list.prepend(0)
-my_linked_list.prepend(1)
-my_linked_list.print_list()
-
-print('After pop_first - Linked List:')
-my_linked_list.pop_first()
-my_linked_list.pop_first()
-my_linked_list.print_list()
-
-
-
-
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    Head: 1
-    Tail: 2
-    Length: 2 
-
-    Linked List:
-    1
-    2
-    
-"""
